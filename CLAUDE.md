@@ -1,29 +1,29 @@
 # CLAUDE.md
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+このファイルは、リポジトリ内のコードを操作する際に Claude Code (claude.ai/code) へのガイダンスを提供します。
 
-## Commands
+## コマンド
 
 ```bash
-npm run dev      # Start dev server with HMR (Vite)
-npm run build    # Type-check (tsc -b) then bundle for production
-npm run lint     # Run ESLint
-npm run preview  # Preview production build locally
+npm run dev      # HMR付き開発サーバーを起動（Vite）
+npm run build    # 型チェック（tsc -b）後に本番用バンドルを生成
+npm run lint     # ESLint を実行
+npm run preview  # 本番ビルドをローカルでプレビュー
 ```
 
-## Architecture
+## アーキテクチャ
 
-This is a minimal React 19 + TypeScript + Vite app (generated from the official Vite template).
+React 19 + TypeScript + Vite の最小構成アプリです（公式 Vite テンプレートから生成）。
 
-- `src/main.tsx` — entry point; mounts `<App />` into `#root` with React StrictMode
-- `src/App.tsx` — single root component; all app logic lives here for now
-- `src/index.css` / `src/App.css` — global and component-scoped styles
-- `public/icons.svg` — SVG sprite sheet; icons referenced via `<use href="/icons.svg#<id>">` pattern
+- `src/main.tsx` — エントリーポイント。React StrictMode で `<App />` を `#root` にマウントする
+- `src/App.tsx` — ルートコンポーネント。現時点ではすべてのアプリロジックがここに集約されている
+- `src/index.css` / `src/App.css` — グローバルスタイルとコンポーネントスコープのスタイル
+- `public/icons.svg` — SVG スプライトシート。`<use href="/icons.svg#<id>">` パターンでアイコンを参照する
 
-## TypeScript config
+## TypeScript 設定
 
-`tsconfig.app.json` targets ES2023 with strict unused-variable checking (`noUnusedLocals`, `noUnusedParameters`). The compiler uses bundler module resolution — import `.tsx` extensions are allowed and required when importing local files.
+`tsconfig.app.json` は ES2023 をターゲットとし、未使用変数の厳格チェック（`noUnusedLocals`、`noUnusedParameters`）が有効です。コンパイラは bundler モジュール解決を使用しており、ローカルファイルのインポート時に `.tsx` 拡張子が必要です。
 
 ## ESLint
 
-Configured in `eslint.config.js` with `typescript-eslint`, `eslint-plugin-react-hooks`, and `eslint-plugin-react-refresh`. To enable stricter type-aware rules for production, see the README for the `recommendedTypeChecked` upgrade path.
+`eslint.config.js` で `typescript-eslint`、`eslint-plugin-react-hooks`、`eslint-plugin-react-refresh` を使用して設定されています。本番向けに型情報を考慮した厳格なルールを有効にする場合は、README の `recommendedTypeChecked` アップグレード手順を参照してください。
