@@ -13,7 +13,7 @@ function App() {
     const setCount = result[1] 
   */
 
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(2)
   const [name, setName] = useState('')
 
   return (
